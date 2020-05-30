@@ -8,7 +8,7 @@
             </hgroup>
 
             <asp:ListView ID="productList" runat="server" 
-                DataKeyNames="Id" GroupItemCount="4"
+                DataKeyNames="Id" 
                 ItemType="ADM_Test.Models.Product" SelectMethod="GetProducts">
                 <EmptyDataTemplate>
                     <table >
@@ -27,33 +27,44 @@
                 </GroupTemplate>
                 <ItemTemplate>
                     <td runat="server">
-                        <table>
-                            <tr>
-                                <td>
-                                    <a href="ProductDetails.aspx?id=<%#:Item.Id%>">
-                                        <img src="/Catalog/Images/<%#:Item.Image%>"
-                                            width="100" height="75" style="border: solid" /></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <a href="ProductDetails.aspx?id=<%#:Item.Id%>">
+                        <div class="lightgrey listElement">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <a href="ProductDetails.aspx?id=<%#:Item.Id%>">
+                                            <img src="/Catalog/Images/<%#:Item.Image%>"
+                                                width="100" height="75" style="border: solid;" /></a>
+                                    </td>
+                                    <td class="padding15">
                                         <span>
                                             <%#:Item.Title%>
                                         </span>
-                                    </a>
-                                    <br />
-                                    <span>
-                                        <b>Price: </b><%#:String.Format("{0:c}", Item.Price)%>
-                                    </span>
-                                    <br />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>&nbsp;</td>
-                            </tr>
-                        </table>
-                        </p>
+                                        <br />
+                                        <span>
+                                            <%#:Item.Description%>
+                                        </span>
+                                        <br />
+                                        <a href="ProductDetails.aspx?id=<%#:Item.Id%>" class="btn btn-default" style="margin-top: 15px;">More Details</a>
+                                        <br />
+                                    </td>
+                                    <td>
+                                        <div class="lightgrey padding15">
+                                            <span>
+                                                Price: <%#:String.Format("{0:c}", Item.Price)%>
+                                            </span>
+                                            <br />
+                                            <span>
+                                                Availability: <%#:Item.Availability%>
+                                            </span>
+                                            <br />
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                </tr>
+                            </table>
+                        </div>
                     </td>
                 </ItemTemplate>
                 <LayoutTemplate>

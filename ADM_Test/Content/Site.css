@@ -35,7 +35,14 @@ textarea {
     border-color: lightgrey;
 }
 
-.padding15{
+.padding15 {
     padding: 15px;
-    margin-top: 15px;
+    margin: 10px;
+}
+
+.listElement {
+    padding-left: 15px;
+    padding-top: 10px;
+    margin-bottom: 10px;
+    width: 90%;
 }

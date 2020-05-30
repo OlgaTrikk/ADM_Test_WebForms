@@ -21,12 +21,28 @@ namespace ADM_Test
         public Product GetProduct([QueryString("id")] string id)
         {
             XmlSerializer serializer = new XmlSerializer(typeof(Store));
-            Store store;
-            using (StreamReader reader = new StreamReader(Server.MapPath(@"~/XmlData/Detail.xml")))
+            Store storeDetail, storeList;
+            using (StreamReader detailReader = new StreamReader(Server.MapPath(@"~/XmlData/Detail.xml")))
+            using (StreamReader listReader = new StreamReader(Server.MapPath(@"~/XmlData/List.xml")))
             {
-                store = (Store)serializer.Deserialize(reader);
+                storeDetail = (Store)serializer.Deserialize(detailReader);
+                storeList = (Store)serializer.Deserialize(listReader);
             }
-            return store.Products.FirstOrDefault(x => x.Id == id);
+            var product = (from p1 in storeDetail.Products
+                          join p2 in storeList.Products
+                          on p1.Id equals p2.Id
+                          where p1.Id == id
+                          select new Product
+                          {
+                              Id = p1.Id,
+                              Title = p1.Title,
+                              Description = p1.Description,
+                              Image = p1.Image,
+                              Specs = p1.Specs,
+                              Price = p2.Price
+                          }).FirstOrDefault();
+
+            return product;
         }
     }
 }

@@ -14,10 +14,10 @@
                 <table>
                     <tr>
                         <td>
-                            <img src="/Catalog/Images/<%#:Item.Image %>" style="border:solid lightgrey; height:300px" alt="<%#:Item.Title %>"/>
+                            <img src="/Catalog/Images/<%#:Item.Image %>" style="border:solid lightgrey; height:150px;  margin-left:10px;" alt="<%#:Item.Title %>"/>
                         </td>
                         <td>&nbsp;</td>  
-                        <td style="vertical-align: top; text-align:left;">
+                        <td style="vertical-align: top; text-align:left; width:75%">
                             <div class="lightgrey padding15">
                                 <b>Description:</b><br /><%#:Item.Description %>
                                 <br/>

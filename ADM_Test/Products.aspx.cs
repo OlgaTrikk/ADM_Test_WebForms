@@ -10,7 +10,7 @@ using System.Xml.Serialization;
 
 namespace ADM_Test
 {
-	public partial class Products : System.Web.UI.Page
+	public partial class Products : Page
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
