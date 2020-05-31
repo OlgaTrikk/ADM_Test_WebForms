@@ -129,6 +129,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="ProductDetails.aspx" />
     <Content Include="Products.aspx" />
+    <Content Include="Scripts\availability.js" />
     <Content Include="XmlData\Detail.xml" />
     <Content Include="XmlData\List.xml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -190,6 +191,8 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Dto\ProductAvailabilityDto.cs" />
+    <Compile Include="Dto\StoreDto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

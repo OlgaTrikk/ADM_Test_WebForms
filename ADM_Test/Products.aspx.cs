@@ -1,4 +1,5 @@
 ﻿using ADM_Test.Models;
+using Microsoft.Ajax.Utilities;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -14,7 +15,6 @@ namespace ADM_Test
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
-
 		}
 
         public List<Product> GetProducts()
@@ -25,7 +25,7 @@ namespace ADM_Test
             {
                 store = (Store)serializer.Deserialize(reader);
             }
-            return store.Products;
+            return store.Products.DistinctBy(x => x.Id).ToList();
         }
     }
 }

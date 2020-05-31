@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="Product List" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Products.aspx.cs" Inherits="ADM_Test.Products" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+<script src="Scripts/availability.js"></script>
     <section>
         <div>
             <hgroup>
@@ -40,7 +41,7 @@
                                             <%#:Item.Title%>
                                         </span>
                                         <br />
-                                        <span>
+                                        <span id="<%#:Item.Id%>_description">
                                             <%#:Item.Description%>
                                         </span>
                                         <br />
@@ -54,7 +55,7 @@
                                             </span>
                                             <br />
                                             <span>
-                                                Availability: <%#:Item.Availability%>
+                                                Availability: <span id="<%#:Item.Id%>_availability"></span>
                                             </span>
                                             <br />
                                         </div>
