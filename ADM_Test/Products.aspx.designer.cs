@@ -15,12 +15,39 @@ namespace ADM_Test
 	{
 
 		/// <summary>
-		/// productList control.
+		/// SortList control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.ListView productList;
+		protected global::System.Web.UI.WebControls.DropDownList SortList;
+
+		/// <summary>
+		/// AscSortButton control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Button AscSortButton;
+
+		/// <summary>
+		/// DescSortButton control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Button DescSortButton;
+
+		/// <summary>
+		/// ProductList control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.ListView ProductList;
 	}
 }

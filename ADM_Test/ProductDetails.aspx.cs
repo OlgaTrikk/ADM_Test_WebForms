@@ -32,6 +32,7 @@ namespace ADM_Test
                 storeDetail = (Store)serializer.Deserialize(detailReader);
                 storeList = (Store)serializer.Deserialize(listReader);
             }
+            // get product price from List.xml and all the other properties from Detail.xml
             var product = (from p1 in storeDetail.Products.DistinctBy(x => x.Id).ToList()
                            join p2 in storeList.Products.DistinctBy(x => x.Id).ToList()
                            on p1.Id equals p2.Id
@@ -49,6 +50,10 @@ namespace ADM_Test
             return product;
         }
 
+        /// <summary>
+        /// Web service method for retrieving products availablility  
+        /// </summary>
+        /// <returns>JSON array object, containing id and availability of the products </returns>
         [WebMethod]
         public static string GetAvailability()
         {

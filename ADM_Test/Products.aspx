@@ -1,14 +1,34 @@
 ﻿<%@ Page Title="Product List" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Products.aspx.cs" Inherits="ADM_Test.Products" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-<script src="Scripts/availability.js"></script>
+    <script src="Scripts/availability.js"></script>
     <section>
         <div>
             <hgroup>
                 <h2><%: Page.Title %></h2>
             </hgroup>
 
-            <asp:ListView ID="productList" runat="server" 
+            <div class="padding15">
+                <label>Sort by:</label>
+                <asp:DropDownList ID="SortList" runat="server" style="margin-left:20px;">
+                  <asp:ListItem Selected="true"></asp:ListItem>
+                  <asp:ListItem Value="Price">Price</asp:ListItem>
+                  <asp:ListItem Value="Sorting.Popular">Popularity</asp:ListItem>     
+                </asp:DropDownList>
+
+                 <asp:Button id="AscSortButton"
+                    style="margin-left:20px;"
+                    Text="ASC"        
+                    runat="server"
+                    OnClick="AscSortButton_Click" />  
+                 <span>/</span>
+                 <asp:Button id="DescSortButton"
+                    Text="DESC"
+                    runat="server" 
+                    OnClick="DescSortButton_Click"/>  
+            </div>
+
+            <asp:ListView ID="ProductList" runat="server" 
                 DataKeyNames="Id" 
                 ItemType="ADM_Test.Models.Product" SelectMethod="GetProducts">
                 <EmptyDataTemplate>
@@ -33,8 +53,8 @@
                                 <tr>
                                     <td>
                                         <a href="ProductDetails.aspx?id=<%#:Item.Id%>">
-                                            <img src="/Catalog/Images/<%#:Item.Image%>"
-                                                width="100" height="75" style="border: solid;" /></a>
+                                            <img src="/Catalog/Images/<%#:Item.Image%>"width="75" height="75"/>
+                                        </a>
                                     </td>
                                     <td class="padding15">
                                         <span>

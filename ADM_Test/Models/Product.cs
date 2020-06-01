@@ -24,5 +24,12 @@ namespace ADM_Test.Models
 		[XmlArray]
 		[XmlArrayItem(ElementName = "Spec")]
 		public List<string> Specs { get; set; }
+
+		public Sorting Sorting { get; set; }
+	}
+
+	public class Sorting
+	{
+		public int Popular { get; set; }
 	}
 }

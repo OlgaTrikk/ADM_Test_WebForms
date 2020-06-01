@@ -33,7 +33,7 @@
                         <ul>
                         <asp:Repeater ID="Specs" DataSource="<%# Item.Specs %>" runat="server">
                             <ItemTemplate>
-                                <li> <%# Container.DataItem?.ToString() ?? string.Empty%></li>
+                                <li><%# Container.DataItem?.ToString() ?? string.Empty%></li>
                             </ItemTemplate>
                         </asp:Repeater>
                      </ul>
